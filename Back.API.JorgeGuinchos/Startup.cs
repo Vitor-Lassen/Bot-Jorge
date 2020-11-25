@@ -26,6 +26,7 @@ namespace Back.API.JorgeGuinchos
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IBotService, BotService>();
+            services.AddScoped<ActionService>();
             services.AddScoped<IMessageService, TelegramService>();
             services.AddControllers();
            

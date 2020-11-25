@@ -33,14 +33,18 @@ namespace Back.API.JorgeGuinchos.Controllers
         [HttpPost]
         public IActionResult Webhook([FromBody] TelegramReceivedDTO telegramReceivedDTO)
         {
-            var chat = new Chat()
+            Task.Run(() =>
             {
-                Id = telegramReceivedDTO.message.Chat.Id,
-                Customer = $"{telegramReceivedDTO.message.Chat.FirstName} {telegramReceivedDTO.message.Chat.LastName}",
-                UserName = telegramReceivedDTO.message.Chat.UserName
-            };
-            _botService.Call(telegramReceivedDTO.message.Text, chat);
+                var chat = new Chat()
+                {
+                    Id = telegramReceivedDTO.message.Chat.Id,
+                    Customer = $"{telegramReceivedDTO.message.Chat.FirstName} {telegramReceivedDTO.message.Chat.LastName}",
+                    UserName = telegramReceivedDTO.message.Chat.UserName
+                };
 
+
+                _botService.Call(telegramReceivedDTO.message.Text, chat);
+            });
 
             return Ok();
         }

@@ -13,5 +13,6 @@ namespace Back.API.JorgeGuinchos.Models
         public IList<string> Aliases { get; set; } = new List<string>();
         public IList<string> Responses { get; set; }
         public FlowCommandEnum FlowCommandEnum{ get; set; }
+        public string Action { get; set; }
     }
 }

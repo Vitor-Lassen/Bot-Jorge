@@ -13,8 +13,8 @@ namespace Back.API.JorgeGuinchos.Models
         }
         public int Id { get; set; }
         public string CurrentOrderFlow { get; set; }
-        public string CPF { get; set; }
         public string Name { get; set; }
-        public string PaymentMethod { get; set; }
+
+        public IDictionary<string, string> Data { get; set; } = new Dictionary<string, string>();
     }
 }

@@ -17,7 +17,7 @@ namespace Back.API.JorgeGuinchos.Repository
                     Order = "1",
                     Title = "novo",
                     Responses = new List<string> { "digite o endereco que esta no momento" },
-                    Aliases = new List<string> {"queroguincho", "reboque", "socorro" },
+                    Aliases = new List<string> {"queroguincho", "reboque", "socorro", "1"  },
                     FlowCommandEnum = FlowCommandEnum.GoToInto
 
                 },
@@ -26,35 +26,40 @@ namespace Back.API.JorgeGuinchos.Repository
                     Order = "1.1",
                     Title = "novo",
                     Responses = new List<string> { "digite seu CPF" },
-                    FlowCommandEnum = FlowCommandEnum.Linear
+                    FlowCommandEnum = FlowCommandEnum.Linear, 
+                    Action = "SaveAddress" 
                 },
                 new Flow()
                 {
                     Order = "1.2",
                     Title = "novo",
-                    Responses = new List<string> { "Escolha o metodo de Pagamento" },
-                    FlowCommandEnum = FlowCommandEnum.Linear
+                    Responses = new List<string> { "Escolha o metodo de Pagamento", "1 - Cartão de Crédito", "2 - Cartão de Debito ", "3 - Dinheiro" },
+                    FlowCommandEnum = FlowCommandEnum.GoToInto,
+                    Action = "SaveCPF" 
                 },
                 new Flow()
                 {
                     Order = "1.2.1",
                     Title = "credito",
-                    Responses = new List<string> { "" },
-                    FlowCommandEnum = FlowCommandEnum.Back
+                    Responses = new List<string> { "Obrigado" },
+                    FlowCommandEnum = FlowCommandEnum.Back,
+                    Aliases = new List<string> {"1","cartao de credito"}
                 },
                 new Flow()
                 {
                     Order = "1.2.1",
                     Title = "debito",
-                    Responses = new List<string> { "" },
-                    FlowCommandEnum = FlowCommandEnum.Back
+                    Responses = new List<string> { "Obrigado" },
+                    FlowCommandEnum = FlowCommandEnum.Back,
+                    Aliases = new List<string> {"2","cartao de debito"}
                 },
                 new Flow()
                 {
                     Order = "1.2.1",
                     Title = "dinheiro",
-                    Responses = new List<string> { "" },
-                    FlowCommandEnum = FlowCommandEnum.Back
+                    Responses = new List<string> { "Obrigado" },
+                    FlowCommandEnum = FlowCommandEnum.Back,
+                    Aliases = new List<string> {"3","dinheiro"}
                 },
 
                 new Flow()
