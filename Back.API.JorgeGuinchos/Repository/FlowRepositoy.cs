@@ -49,7 +49,7 @@ namespace Back.API.JorgeGuinchos.Repository
                 {
                     Order = "1.2.1",
                     Title = "debito",
-                    Responses = new List<string> { "Obrigado,estaremos enviando um guincho para o local mencionado, quer duvida ligar para xxxxx-xxxx" },
+                    Responses = new List<string> { "Obrigado,estaremos enviando um guincho para o local mencionado, qualquer duvida ligar para xxxxx-xxxx" },
                     FlowCommandEnum = FlowCommandEnum.Back,
                     Aliases = new List<string> {"2","cartao de debito"}
                 },
@@ -57,7 +57,7 @@ namespace Back.API.JorgeGuinchos.Repository
                 {
                     Order = "1.2.1",
                     Title = "dinheiro",
-                    Responses = new List<string> { "Obrigado,estaremos enviando um guincho para o local mencionado, quer duvida ligar para xxxxx-xxxx" },
+                    Responses = new List<string> { "Obrigado,estaremos enviando um guincho para o local mencionado, qualquer duvida ligar para xxxxx-xxxx" },
                     FlowCommandEnum = FlowCommandEnum.Back,
                     Aliases = new List<string> {"3","dinheiro"}
                 },
